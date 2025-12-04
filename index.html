@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LinguistLens - AI Document Translator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script>
+      window.pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <style>
+      /* Custom scrollbar for better aesthetics in split view */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #888; 
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #555; 
+      }
+      .print-content {
+        background-color: white;
+        color: black;
+        padding: 20px;
+        min-height: 100%;
+      }
+      /* Ensure translated HTML respects basic document structure */
+      .translated-view h1 { font-size: 2em; font-weight: bold; margin-bottom: 0.5em; }
+      .translated-view h2 { font-size: 1.5em; font-weight: bold; margin-bottom: 0.5em; }
+      .translated-view h3 { font-size: 1.17em; font-weight: bold; margin-bottom: 0.5em; }
+      .translated-view p { margin-bottom: 1em; line-height: 1.6; }
+      .translated-view ul { list-style-type: disc; margin-left: 20px; margin-bottom: 1em; }
+      .translated-view ol { list-style-type: decimal; margin-left: 20px; margin-bottom: 1em; }
+      .translated-view table { width: 100%; border-collapse: collapse; margin-bottom: 1em; }
+      .translated-view th, .translated-view td { border: 1px solid #ddd; padding: 8px; }
+      .translated-view th { background-color: #f2f2f2; font-weight: bold; }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0"
+  }
+}
+</script>
+</head>
+  <body class="bg-slate-50 text-slate-900 h-screen overflow-hidden">
+    <div id="root" class="h-full"></div>
+  </body>
+</html>

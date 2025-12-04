@@ -1,0 +1,5 @@
+{
+  "name": "AI-Translator--Response Scheduling- Delhi",
+  "description": "A powerful React application that translates PDF and Image files between English and Indian languages (Hindi, Marathi, Gujarati, Bengali, Kannada) while preserving the original layout and formatting using Google Gemini AI.",
+  "requestFramePermissions": []
+}
